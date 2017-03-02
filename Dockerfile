@@ -1,8 +1,7 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 RUN apt-get update
 RUN apt-get -y install ubuntu-cloud-keyring
 RUN set -x \
-    && echo "deb http://ubuntu-cloud.archive.canonical.com/ubuntu trusty-updates/mitaka main" > /etc/apt/sources.list.d/mitaka.list \
     && apt-get -y update \
     && apt-get -y install python-mysqldb \
     && apt-get -y install keystone \
