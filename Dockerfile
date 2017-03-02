@@ -1,7 +1,8 @@
 FROM ubuntu:16.04
 RUN apt-get update
-RUN apt-get -y install ubuntu-cloud-keyring
+RUN apt-get -y install ubuntu-cloud-keyring software-properties-common
 RUN set -x \
+    && add-apt-repository cloud-archive:newton \
     && apt-get -y update \
     && apt-get -y install python-mysqldb \
     && apt-get -y install keystone \
