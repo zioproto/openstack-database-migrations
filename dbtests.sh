@@ -11,9 +11,14 @@ glance-manage db_version
 glance-manage db_sync
 glance-manage db_version
 
+nova-manage db online_data_migrations
 nova-manage db version
+nova-manage api_db version
 nova-manage db sync
+nova-manage api_db sync
 nova-manage db version
+nova-manage api_db version
+nova-manage db online_data_migrations
 
 neutron-db-manage current
 neutron-db-manage upgrade --expand

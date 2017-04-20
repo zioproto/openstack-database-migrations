@@ -23,6 +23,8 @@ RUN sed -i -e "s/#connection = <None>/connection = mysql:\/\/root:my-secret-pw@1
 #Set db in nova.conf
 RUN echo "[database] \n\
 connection = mysql://root:my-secret-pw@127.0.0.1/nova" >> /etc/nova/nova.conf
+RUN echo "[api_database] \n\
+connection = mysql://root:my-secret-pw@127.0.0.1/nova_api" >> /etc/nova/nova.conf
 
 #Set db in cinder.conf
 RUN echo "[database] \n\
