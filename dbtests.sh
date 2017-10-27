@@ -11,7 +11,11 @@ glance-manage db_version
 glance-manage db_sync
 glance-manage db_version
 
-nova-manage db online_data_migrations
+#Make sure you have run this command in Mitaka
+# before going on all Mitaka online migrations should be completed
+#nova-manage db online_data_migrations
+
+# Commands for Nova to be run in Newton
 nova-manage db version
 nova-manage api_db version
 nova-manage db sync
