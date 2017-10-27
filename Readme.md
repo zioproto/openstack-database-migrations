@@ -13,7 +13,7 @@ It is important that character set and collation are exactly the same as your pr
 
 # Run the tool
 
-     docker run --network=host -v ~/backups/:/backups/ -ti zioproto/openstack-db-migrations-check /bin/bash
+     docker run --network=host -v ~/backups/:/backups/ -ti zioproto/openstack-db-migrations-check:ocata /bin/bash
 
 
 The `Dockerfile` is included in this git repository. You probably want to adapt it at the upgrade you want to do. I wrote this file for my liberty to mitaka upgrade.
