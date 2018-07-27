@@ -1,7 +1,6 @@
 FROM ubuntu:16.04
-RUN apt-get update
-RUN apt-get -y install ubuntu-cloud-keyring software-properties-common
-RUN set -x \
+RUN apt-get update \
+    && apt-get -y install ubuntu-cloud-keyring software-properties-common \
     && add-apt-repository cloud-archive:ocata \
     && apt-get -y update \
     && apt-get -y install python-mysqldb \
