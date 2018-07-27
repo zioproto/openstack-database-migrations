@@ -14,7 +14,8 @@ RUN apt-get update \
     && apt-get -y clean
 
 # Set db in keystone.conf
-RUN sed -i -e "s/connection = sqlite:\/\/\/\/var\/lib\/keystone\/keystone.db/connection = mysql:\/\/root:my-secret-pw@127.0.0.1\/keystone/" "/etc/keystone/keystone.conf"
+RUN sed -i -e "s/#backend = sqlalchemy/backend = mysql/" "/etc/keystone/keystone.conf"
+RUN sed -i -e "s/#connection = <None>/connection = mysql:\/\/root:my-secret-pw@127.0.0.1\/keystone/" "/etc/keystone/keystone.conf"
 
 # Set db in glance.conf
 RUN sed -i -e "s/#connection = <None>/connection = mysql:\/\/root:my-secret-pw@127.0.0.1\/glance/" "/etc/glance/glance-api.conf"
