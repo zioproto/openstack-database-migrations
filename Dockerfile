@@ -11,6 +11,8 @@ RUN set -x \
        nova-api \
        cinder-api \
        neutron-server \
+       python-neutron-lbaas \
+       neutron-l2gateway-agent \
        heat-api \
        mysql-client \
     && apt-get -y clean
