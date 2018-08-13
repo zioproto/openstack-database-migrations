@@ -3,14 +3,17 @@ RUN apt-get update \
     && apt-get -y install ubuntu-cloud-keyring software-properties-common \
     && add-apt-repository cloud-archive:ocata \
     && apt-get -y update \
-    && apt-get -y install python-mysqldb \
-    && apt-get -y install keystone \
-    && apt-get -y install glance \
-    && apt-get -y install nova-api \
-    && apt-get -y install cinder-api \
-    && apt-get -y install neutron-server \
-    && apt-get -y install heat-api \
-    && apt-get -y install mysql-client \
+    && apt-get -y install \
+    python-mysqldb \
+    keystone \
+    glance \
+    nova-api \
+    cinder-api \
+    neutron-server \
+    neutron-lbaas-common \
+    neutron-l2gateway-agent \
+    heat-api \
+    mysql-client \
     && apt-get -y clean
 
 # Set db in keystone.conf
