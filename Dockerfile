@@ -12,6 +12,7 @@ RUN apt-get update \
     neutron-server \
     neutron-lbaas-common \
     neutron-l2gateway-agent \
+    python-neutron-vpnaas \
     heat-api \
     mysql-client \
     && apt-get -y clean
